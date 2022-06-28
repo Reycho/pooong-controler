@@ -1,5 +1,5 @@
 input.onGesture(Gesture.TiltLeft, function () {
-    radio.sendValue("tleft", 0)
+    radio.sendValue("bleft", 0)
     music.playTone(262, music.beat(BeatFraction.Whole))
     basic.showLeds(`
         # # . . .
@@ -12,7 +12,7 @@ input.onGesture(Gesture.TiltLeft, function () {
     basic.clearScreen()
 })
 input.onGesture(Gesture.TiltRight, function () {
-    radio.sendValue("tright", 0)
+    radio.sendValue("bright", 0)
     music.playTone(392, music.beat(BeatFraction.Whole))
     basic.showLeds(`
         . . . # #
@@ -34,13 +34,13 @@ basic.forever(function () {
     255
     )
     if (input.buttonIsPressed(Button.A)) {
-        vol += -20
+        vol += -5
         if (vol < 0) {
             vol = 0
         }
     }
     if (input.buttonIsPressed(Button.B)) {
-        vol += 20
+        vol += 5
         if (vol > 255) {
             vol = 255
         }
